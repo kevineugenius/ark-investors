@@ -20,6 +20,7 @@ B-->D;
 C-->D;
 ```
 ### Authentication
+Auth is done with simple JWTs and provides only as much security as JWT and Spring Boot Security can provide. In a production environment I would break all this auth code out into its own project and run it as a standalone service. For preprod purposes, todo: fill this in
 
 ### Testing
 
