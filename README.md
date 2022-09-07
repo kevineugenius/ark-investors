@@ -4,8 +4,10 @@ The app is a very rudimentary and basic start to the given challenge. The databa
 
 Testing Mermaid in GitHub.
 
+```mermaid
 graph TD;
 A-->B;
 A-->C;
 B-->D;
 C-->D;
+```
