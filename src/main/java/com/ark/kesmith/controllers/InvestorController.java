@@ -5,8 +5,10 @@ import com.ark.kesmith.services.InvestorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequestMapping("/investor")
 @RestController
 public class InvestorController {
     @Autowired
@@ -16,7 +18,7 @@ public class InvestorController {
     I don't want this to remain a POST forever but for now it makes sense as adding
     the "same" investor won't be detected or rejected.
      */
-    @PostMapping("/investor/add")
+    @PostMapping("/add")
     public void addInvestor(@RequestBody Investor investor) {
         System.out.println("The service returned: " + investorService.addInvestor(investor));
     }

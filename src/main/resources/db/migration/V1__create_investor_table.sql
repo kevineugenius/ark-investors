@@ -5,6 +5,6 @@ CREATE TABLE IF NOT EXISTS `client` (
 
 CREATE TABLE IF NOT EXISTS `investor` (
 `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`created_by` int NOT NULL REFERENCES clients(id),
+`created_by` int NOT NULL REFERENCES client(id),
 `name` varchar(20) NOT NULL
 );

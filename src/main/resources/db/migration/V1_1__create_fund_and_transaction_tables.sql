@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS `fund` (
 `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 `name` varchar(20) NOT NULL,
-`created_by` int NOT NULL REFERENCES clients(id)
+`created_by` int NOT NULL REFERENCES client(id)
 );
 
 CREATE TABLE IF NOT EXISTS `transaction_type` (
