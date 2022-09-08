@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `clients` (
+CREATE TABLE IF NOT EXISTS `client` (
 `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 `name` varchar(20) NOT NULL
 );
