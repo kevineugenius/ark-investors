@@ -20,6 +20,9 @@ public class InvestorController {
      */
     @PostMapping("/add")
     public void addInvestor(@RequestBody Investor investor) {
-        System.out.println("The service returned: " + investorService.addInvestor(investor));
+        System.out.println("Investor service returned: " + investorService.addInvestor(investor));
     }
 }
+
+// todo: note to self: we need a queue at some point for transactions?
+// todo: should we lock a fund to keep a balance and record everything, then unlock and move to the next thing?

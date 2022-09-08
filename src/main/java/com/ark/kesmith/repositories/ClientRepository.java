@@ -1,0 +1,7 @@
+package com.ark.kesmith.repositories;
+
+import com.ark.kesmith.models.Client;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ClientRepository extends CrudRepository<Client, Integer> {
+}

@@ -6,37 +6,30 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Investor {
+public class Client {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
-    private int createdBy;
     private String name;
 
     public int getId() {
         return id;
     }
 
-    public int getCreatedBy() {
-        return createdBy;
-    }
-
     public String getName() {
         return name;
     }
 
-    protected Investor() {}
+    protected Client() {}
 
-    public Investor(int createdBy, String name) {
-        this.createdBy = createdBy;
+    public Client(String name) {
         this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Investor{" +
+        return "Client{" +
                 "id=" + id +
-                ", createdBy=" + createdBy +
                 ", name='" + name + '\'' +
                 '}';
     }

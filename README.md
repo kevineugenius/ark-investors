@@ -25,7 +25,7 @@ The project contains more markdown files for individual features in the `/doc` d
 ### Authentication
 
 ### Database
-The project includes a dev H2 database called tempdb. With the app running, access it by browsing to `http://localhost:8080/h2-console`.
+The project includes a dev H2 database called tempdb. With the app running, access it by browsing to `http://localhost:8080/api/v1/h2-console`.
 
 ### Testing
 
