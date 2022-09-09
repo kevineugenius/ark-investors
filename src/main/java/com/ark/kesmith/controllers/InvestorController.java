@@ -17,9 +17,10 @@ public class InvestorController {
     /*
     I don't want this to remain a POST forever but for now it makes sense as adding
     the "same" investor won't be detected or rejected.
+    todo: make database fields unique?
      */
     @PostMapping("/add")
-    public void addInvestor(@RequestBody Investor investor) {
+    public void addInvestor(@RequestBody Investor investor) { // todo: add a client here as the one who added this investor
         System.out.println("Investor service returned: " + investorService.addInvestor(investor));
     }
 }
