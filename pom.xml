@@ -16,6 +16,26 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+	<profiles>
+		<profile>
+			<id>integration-tests</id>
+			<properties>
+				<spring.profiles.active>integration-tests</spring.profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>unit-tests</id>
+			<properties>
+				<spring.profiles.active>unit-tests</spring.profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>development</id>
+			<properties>
+				<spring.profiles.active>development</spring.profiles.active>
+			</properties>
+		</profile>
+	</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -61,6 +81,12 @@
 	</dependencies>
 
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -83,6 +109,20 @@
 					<user>sa</user>
 					<url>jdbc:h2:mem:DATABASE</url>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-help-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<id>show-profiles</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>active-profiles</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

@@ -1,5 +1,10 @@
 ### Running the App
-Run the project with `mvn spring-boot:run`. Maven should download necessary dependencies during compilation.
+Run the project with `mvn spring-boot:run`. Maven should download necessary dependencies during compilation. By default, no profile is active. An active maven profile will automatically activate the  Spring profile of the same name. A profile can by set by adding `-P profile-name` to the above command. Profiles are defined in `pom.xml`. Alternatively, a profile can be set to active in the `pom.xml` file by adding to the declaration:
+```
+<activation>
+    <activeByDefault>true</activeByDefault>
+</activation>
+```
 
 ### App Notes
 The app is a very rudimentary and basic start to the given challenge. The database tables only hold the data that is necessary for basic functions to work and would normally include many more columns. 
