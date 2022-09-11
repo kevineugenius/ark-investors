@@ -1,15 +1,38 @@
 package com.ark.kesmith.models;
 
-public enum TransactionType {
-    CONTRIBUTION,
-    INTEREST_INCOME,
-    DISTRIBUTION,
-    GENERAL_EXPENSE,
-    MANAGEMENT_FEE;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-    public int getMultiplier(TransactionType t) {
-        return (t.equals(TransactionType.CONTRIBUTION) ||
-                t.equals(TransactionType.INTEREST_INCOME))
-                ? 1 : -1;
+@Entity
+public class TransactionType {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
+    private String name;
+    private int multiplier;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMultiplier() {
+        return multiplier;
+    }
+
+    public TransactionType() {}
+
+    public TransactionType(String name, int multiplier) {
+        this.name = name;
+        if (multiplier * multiplier == 1) {
+            this.multiplier = multiplier;
+        } else {
+            throw new RuntimeException("Invalid multiplier value.");
+        }
     }
 }

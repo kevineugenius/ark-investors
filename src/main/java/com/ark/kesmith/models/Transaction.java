@@ -9,10 +9,13 @@ public class Transaction {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private int investor_id;
-    private TransactionType type;
+    private int type;
     private float amount;
+    private int fund_id;
+    @Transient
     @Temporal(TemporalType.TIMESTAMP)
-    private Date dateTime;
+    private Date date;
+    @Transient
     private int multiplier;
 
     public int getId() {
@@ -23,7 +26,7 @@ public class Transaction {
         return investor_id;
     }
 
-    public TransactionType getType() {
+    public int getType() {
         return type;
     }
 
@@ -31,21 +34,23 @@ public class Transaction {
         return amount;
     }
 
-    public Date getDateTime() {
-        return dateTime;
+    public Date getDate() {
+        return date;
     }
 
-    public int getMultiplier() {
-        return multiplier;
-    }
+    public int getFund_id() { return fund_id; }
+
+    public int getMultiplier() { return multiplier; }
+
+    public void setMultiplier(int m) { multiplier = m; }
 
     public Transaction() {}
 
-    public Transaction(int investor_id, TransactionType type, float amount) {
+    public Transaction(int investor_id, int fund_id, int type, float amount) {
         this.investor_id = investor_id;
+        this.fund_id = fund_id;
         this.type = type;
         this.amount = amount;
-        this.multiplier = type.getMultiplier(type);
     }
 
     @Override
@@ -54,8 +59,10 @@ public class Transaction {
                 "id=" + id +
                 ", investor_id=" + investor_id +
                 ", type=" + type +
+                ", fund_id=" + fund_id +
                 ", amount=" + amount +
-                ", dateTime=" + dateTime +
+                // this does actually work in the database but prints out null on creation; might be a jpa quirk from the transient tag
+                ", date=" + date +
                 '}';
     }
 }
