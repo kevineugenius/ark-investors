@@ -33,7 +33,7 @@ The project contains more markdown files for individual features in the `/doc` d
 The project includes a dev H2 database called tempdb. With the app running, access it by browsing to `http://localhost:8080/api/v1/h2-console`.
 
 ### Testing
-Tests will include integration and unit tests, split up in order to allow easy running of one or the other to better control build times with automated test runners. Further, to separate the real database from test database, profiles should be added to the tests but are currently not needed. Both Mockito and MockMvc are used.
+Tests will include integration and unit tests, split up in order to allow easy running of one or the other to better control build times with automated test runners. Further, to separate the real database from test database, profiles should be added to the tests but are currently not needed. Both Mockito and MockMvc are used. The migration scripts that set up and add data to the in-memory database run for the integration scripts; they might also run for the unit tests but they shouldn't and even if they do the unit tests shouldn't know about it.
 
 ### Code Cleanliness Tools
 This app currently does not use any automated tools for clean or consistent code.  Adding a proper linting tool is on the horizon.  For now, all formatting is done with IntelliJ standards.

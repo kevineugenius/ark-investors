@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS `transaction` (
 
 CREATE TABLE IF NOT EXISTS `fund_investor` (
 `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`fund_investor` int NOT NULL,
 `fund` int NOT NULL REFERENCES fund(id),
 `investor` int NOT NULL REFERENCES investor(id)
 );
