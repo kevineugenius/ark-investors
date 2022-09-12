@@ -28,6 +28,7 @@ C-->D;
 The project contains more markdown files for individual features in the `/doc` directory.
 
 ### Authentication
+Authentication is unfinished and I have opted to leave it out for now as it can also make the dev process a bit slower until dev profiles can be set up.
 
 ### Database
 The project includes a dev H2 database called tempdb. With the app running, access it by browsing to `http://localhost:8080/api/v1/h2-console`.
