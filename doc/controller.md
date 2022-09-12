@@ -7,4 +7,9 @@ To access an endpoint, the url may be constructed by `server base` + `Spring bas
 For example: `localhost:8080` + `/api/v1` + `/investor` + `/add` will access `InvestorController.addInvestor()` if it is a `POST` request.
 
 Further, curl may be used to target these endpoints:
+
 `curl -X POST http://localhost:8080/api/v1/investor/add -H "Content-Type: application/json" -d '{"createdBy":2,"name":"New Investor"}'`
+
+`curl -X POST http://localhost:8080/api/v1/client/add -H "Content-Type: application/json" -d '{"name":"Clive Client"}'`
+
+`curl -X POST http://localhost:8080/api/v1/transaction/add -H "Content-Type: application/json" -d '{"investorId":1,"fundId":1,"type":1,"amount":40.25}'`

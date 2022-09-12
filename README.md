@@ -41,3 +41,4 @@ This app currently does not use any automated tools for clean or consistent code
 
 ### Incomplete List of Todos
 - Can services and repositories be refactored into generics?
+- Create rudimentary frontend
