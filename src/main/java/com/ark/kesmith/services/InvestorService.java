@@ -13,4 +13,8 @@ public class InvestorService {
     public Investor addInvestor(Investor investor) {
         return investorRepository.save(investor);
     }
+
+    public Investor getInvestorById(int id) {
+        return investorRepository.findById(id).get();
+    }
 }

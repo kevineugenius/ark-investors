@@ -13,4 +13,8 @@ public class FundService {
     public Fund addFund(Fund fund) {
         return fundRepository.save(fund);
     }
+
+    public Fund getFundById(int id) {
+        return fundRepository.findById(id).get();
+    }
 }

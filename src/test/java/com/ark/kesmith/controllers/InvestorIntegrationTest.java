@@ -32,6 +32,7 @@ public class InvestorIntegrationTest {
     @Test
     public void testAdd() throws Exception {
         String body = "{\"createdBy\":1,\"name\":\"Tester Investor\"}";
+        // pull this out into a setup method
         MockMvc mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 
         Iterable<Investor> investorsOriginal = investorRepository.findAll();

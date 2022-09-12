@@ -3,18 +3,21 @@ package com.ark.kesmith.models;
 import javax.persistence.*;
 import java.util.Date;
 
+// todo: this class is inconsistent with the others right now; the others need to be updated to camelcase fields
 @Entity
 public class Transaction {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
-    private int investor_id;
+    private int investorId;
     private int type;
     private float amount;
-    private int fund_id;
+    private int fundId;
+    // todo: dates are built in the database but they aren't returned at all.  transient is the wrong tag.
     @Transient
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
+    // todo: should this go into the DTO?
     @Transient
     private int multiplier;
 
@@ -22,8 +25,8 @@ public class Transaction {
         return id;
     }
 
-    public int getInvestor_id() {
-        return investor_id;
+    public int getInvestorId() {
+        return investorId;
     }
 
     public int getType() {
@@ -38,7 +41,7 @@ public class Transaction {
         return date;
     }
 
-    public int getFund_id() { return fund_id; }
+    public int getFundId() { return fundId; }
 
     public int getMultiplier() { return multiplier; }
 
@@ -46,9 +49,9 @@ public class Transaction {
 
     public Transaction() {}
 
-    public Transaction(int investor_id, int fund_id, int type, float amount) {
-        this.investor_id = investor_id;
-        this.fund_id = fund_id;
+    public Transaction(int investorId, int fundId, int type, float amount) {
+        this.investorId = investorId;
+        this.fundId = fundId;
         this.type = type;
         this.amount = amount;
     }
@@ -57,11 +60,10 @@ public class Transaction {
     public String toString() {
         return "Transaction{" +
                 "id=" + id +
-                ", investor_id=" + investor_id +
+                ", investorId=" + investorId +
                 ", type=" + type +
-                ", fund_id=" + fund_id +
                 ", amount=" + amount +
-                // this does actually work in the database but prints out null on creation; might be a jpa quirk from the transient tag
+                ", fundId=" + fundId +
                 ", date=" + date +
                 '}';
     }
