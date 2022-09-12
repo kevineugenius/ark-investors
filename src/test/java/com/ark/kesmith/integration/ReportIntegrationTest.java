@@ -1,5 +1,6 @@
-package com.ark.kesmith.controllers;
+package com.ark.kesmith.integration;
 
+import com.ark.kesmith.controllers.ReportController;
 import com.ark.kesmith.models.Transaction;
 import com.ark.kesmith.services.ReportService;
 import org.junit.jupiter.api.BeforeAll;

@@ -1,5 +1,6 @@
-package com.ark.kesmith.controllers;
+package com.ark.kesmith.integration;
 
+import com.ark.kesmith.controllers.InvestorController;
 import com.ark.kesmith.models.Investor;
 import com.ark.kesmith.repositories.InvestorRepository;
 import org.junit.jupiter.api.Test;

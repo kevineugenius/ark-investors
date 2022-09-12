@@ -1,5 +1,6 @@
-package com.ark.kesmith.controllers;
+package com.ark.kesmith.integration;
 
+import com.ark.kesmith.controllers.TransactionController;
 import com.ark.kesmith.repositories.TransactionRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
